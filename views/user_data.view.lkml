@@ -29,6 +29,9 @@ view: user_data {
   measure: total_max_num_orders {
     type: sum
     sql: ${max_num_orders} ;;  }
+
+
+
   measure: average_max_num_orders {
     type: average
     sql: ${max_num_orders} ;;  }
@@ -37,6 +40,23 @@ view: user_data {
     type: number
     sql: ${TABLE}.total_num_orders ;;
   }
+
+
+  measure: ooa_rate {
+    view_label: "Event Data"
+    group_label: "Rates"
+    label: "OOA Rate"
+    description: "Percent of link clicks that were unsuccessful due to out of area"
+    type: number
+    value_format_name: percent_4
+    sql: sum(${max_num_orders})/sum(${total_num_orders}) ;;
+  }
+
+
+
+
+
+
 
   dimension: user_id {
     type: number
