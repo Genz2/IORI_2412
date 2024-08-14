@@ -49,7 +49,7 @@ view: user_data {
     description: "Percent of link clicks that were unsuccessful due to out of area"
     type: number
     value_format_name: percent_4
-    sql: sum(${max_num_orders})/sum(${total_num_orders}) ;;
+    sql: sum(${total_num_orders})/sum(${max_num_orders}) ;;
   }
 
 
