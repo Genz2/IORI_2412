@@ -49,13 +49,23 @@ view: user_data {
     description: "Percent of link clicks that were unsuccessful due to out of area"
     type: number
     value_format_name: percent_4
-    sql: sum(${total_num_orders})/sum(${max_num_orders}) ;;
+    sql: (0E0+${total_num_orders}) /(0E0+${max_num_orders}) ;;
   }
 
 
 
 
+  measure: ooa_rate_test2 {
+    view_label: "Event Data test 2"
+    group_label: "Rates"
+    label: "OOA Rate"
+    description: "Percent of link clicks that were unsuccessful due to out of area"
+    type: number
+    value_format_name: percent_4
 
+    sql: sum(${total_num_orders})/sum(${max_num_orders}) ;;
+
+    }
 
 
   dimension: user_id {
